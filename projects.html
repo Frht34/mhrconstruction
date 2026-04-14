@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects | MHR Construction</title>
+    <style>
+        :root { --primary: #1a252f; --accent: #d35400; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        
+        /* Navigasyon */
+        nav { background: var(--primary); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        nav a:hover { color: var(--accent); }
+
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Başlık ve Profesyonel Giriş Yazısı */
+        .project-header { text-align: center; margin-bottom: 50px; }
+        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .intro-text { 
+            max-width: 850px; 
+            margin: 0 auto; 
+            color: #555; 
+            font-size: 1.1rem; 
+            line-height: 1.8; 
+            font-style: italic;
+            position: relative;
+            padding: 0 20px;
+        }
+        .intro-text::before, .intro-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            position: absolute;
+            opacity: 0.3;
+        }
+        .intro-text::before { left: -10px; top: -20px; }
+        .intro-text::after { right: -10px; bottom: -40px; }
+
+        /* Video Izgarası */
+        .project-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 25px; 
+            margin-top: 40px;
+        }
+
+        .video-card { 
+            background: white; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover { transform: translateY(-5px); }
+
+        /* Video Standartlaştırma */
+        video { 
+            width: 100%; 
+            height: 320px; 
+            object-fit: cover; /* Yatay videolar için ideal */
+            background: #000;
+            display: block;
+        }
+
+        /* Dikey Çekilen Videoların Bozulmaması İçin (15 ve 22) */
+        .vertical-video { 
+            object-fit: contain; 
+        }
+
+        .video-info { 
+            padding: 15px; 
+            text-align: center; 
+            border-top: 3px solid var(--accent); 
+            background: #fff;
+        }
+        .video-info h3 { margin: 0; font-size: 1rem; color: var(--primary); text-transform: uppercase; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .intro-text { font-size: 1rem; }
+            video { height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav><a href="index.html">← Back to Home</a></nav>
+
+    <div class="container">
+        <div class="project-header">
+            <h1>Project Portfolio</h1>
+            <p class="intro-text">
+                Every project we undertake is a testament to our commitment to precision, durability, and aesthetic excellence. From high-end residential renovations to large-scale commercial build-outs, we transform structural blueprints into masterful interior realities.
+            </p>
+        </div>
+
+        <div class="project-grid">
+
+            <div class="video-card">
+                <video controls muted loop playsinline><source src="19.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Grand Ballroom</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline><source src="17.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Executive Lounge</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline><source src="21.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Modern Foyer Design</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline><source src="13.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Artisan Wallpaper</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline><source src="18.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Architectural Paneling</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline><source src="14.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Reception & Lobby</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline class="vertical-video"><source src="15.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>High-End Finishing</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline class="vertical-video"><source src="22.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Master Bath Renovation</h3></div>
+            </div>
+
+            <div class="video-card">
+                <video controls muted loop playsinline><source src="16.mp4" type="video/mp4"></video>
+                <div class="video-info"><h3>Commercial Social Space</h3></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

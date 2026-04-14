@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper & Painting | MHR Construction</title>
+    <style>
+        :root { --primary: #1a252f; --accent: #d35400; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        nav { background: var(--primary); padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); font-size: 2.2rem; border-bottom: 4px solid var(--accent); display: inline-block; margin-bottom: 20px; }
+        .intro-text { font-size: 1.1rem; color: #555; margin-bottom: 30px; }
+
+        /* Galeri Düzeni - 3 Resim İçin */
+        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 30px 0; }
+        .image-gallery img { width: 100%; height: 280px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
+        .image-gallery img:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Büyütme Ekranı */
+        #lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
+        #lightbox img { max-width: 90%; max-height: 85%; border: 3px solid white; border-radius: 5px; }
+
+        /* Özellikler */
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .feature-item { background: #fdfdfd; padding: 20px; border-left: 5px solid var(--accent); border-radius: 5px; border: 1px solid #eee; }
+        .feature-item strong { display: block; color: var(--primary); font-size: 1.1rem; margin-bottom: 5px; }
+
+        @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav><a href="index.html">← Back to Home</a></nav>
+
+    <div class="container">
+        <h1>Wallpaper & Painting</h1>
+        <p class="intro-text">
+            Transform your walls into works of art. From master-class paint finishes to the precise installation of luxury wallpapers, we combine technical expertise with premium materials to redefine your interior aesthetics.
+        </p>
+        
+        <div class="image-gallery">
+            <img src="10.jpg" alt="Modern Dual Texture Walls" onclick="openFull(this.src)">
+            <img src="11.jpg" alt="Esthetic Paint Preparation" onclick="openFull(this.src)">
+            <img src="12.jpg" alt="Classic Luxury Wallpaper Finish" onclick="openFull(this.src)">
+        </div>
+
+        <div class="features">
+            <div class="feature-item">
+                <strong>Premium Painting</strong>
+                Expert application of high-end paints with flawless Level 5 surface preparation.
+            </div>
+            <div class="feature-item">
+                <strong>Luxury Wallpaper Installation</strong>
+                Precision hanging of vinyl, fabric, non-woven, and designer wallpapers with perfect seam alignment.
+            </div>
+            <div class="feature-item">
+                <strong>Decorative Finishes</strong>
+                Specialty coatings, textured paints, and feature wall creations.
+            </div>
+            <div class="feature-item">
+                <strong>Surface Preparation</strong>
+                Ensuring a perfectly smooth and primed canvas for a durable and professional result.
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="full-img" src="">
+        <p style="position: absolute; bottom: 20px; color: white;">Click anywhere to close</p>
+    </div>
+
+    <script>
+        function openFull(src) {
+            document.getElementById('full-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>

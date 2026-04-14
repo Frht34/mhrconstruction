@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRP & T-Bar Systems | MHR Construction</title>
+    <style>
+        :root { --primary: #1a252f; --accent: #d35400; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        nav { background: var(--primary); padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); font-size: 2.2rem; border-bottom: 4px solid var(--accent); display: inline-block; margin-bottom: 20px; }
+        .intro-text { font-size: 1.1rem; color: #555; margin-bottom: 30px; }
+
+        /* Galeri */
+        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 30px 0; }
+        .image-gallery img { width: 100%; height: 280px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
+        .image-gallery img:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Lightbox */
+        #lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
+        #lightbox img { max-width: 90%; max-height: 85%; border: 3px solid white; border-radius: 5px; }
+
+        /* Özellikler */
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .feature-item { background: #fdfdfd; padding: 20px; border-left: 5px solid var(--accent); border-radius: 5px; border: 1px solid #eee; }
+        .feature-item strong { display: block; color: var(--primary); font-size: 1.1rem; margin-bottom: 5px; }
+
+        @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav><a href="index.html">← Back to Home</a></nav>
+
+    <div class="container">
+        <h1>FRP & T-Bar Systems</h1>
+        <p class="intro-text">
+            MHR Construction provides heavy-duty FRP (Fiberglass Reinforced Plastic) paneling and precision T-Bar suspended ceiling systems. We focus on durability, sanitary requirements, and superior acoustic performance for commercial and industrial interiors.
+        </p>
+        
+        <div class="image-gallery">
+            <img src="1.jpg" alt="Modern Industrial Interior" onclick="openFull(this.src)">
+            <img src="2.jpg" alt="Structural Reinforcement" onclick="openFull(this.src)">
+            <img src="3.jpg" alt="Framing and Infrastructure" onclick="openFull(this.src)">
+        </div>
+
+        <div class="features">
+            <div class="feature-item">
+                <strong>T-Bar Suspended Ceilings</strong>
+                Expert installation of drop ceilings with acoustic tiles for office and commercial spaces.
+            </div>
+            <div class="feature-item">
+                <strong>FRP Wall Panels</strong>
+                High-durability, moisture-resistant paneling ideal for kitchens, labs, and washrooms.
+            </div>
+            <div class="feature-item">
+                <strong>Industrial Standards</strong>
+                Every installation meets strict safety and building codes for structural integrity.
+            </div>
+            <div class="feature-item">
+                <strong>Integrated Infrastructure</strong>
+                Seamless coordination with electrical, HVAC, and fire sprinkler systems.
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="full-img" src="">
+        <p style="position: absolute; bottom: 20px; color: white;">Click anywhere to close</p>
+    </div>
+
+    <script>
+        function openFull(src) {
+            document.getElementById('full-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>

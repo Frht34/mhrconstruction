@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drywall & Steel Framing | MHR Construction</title>
+    <style>
+        :root { --primary: #1a252f; --accent: #d35400; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        
+        /* Navigasyon */
+        nav { background: var(--primary); padding: 15px; text-align: center; }
+        nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); font-size: 2.2rem; border-bottom: 4px solid var(--accent); display: inline-block; margin-bottom: 20px; }
+
+        /* Resim Galerisi - Sadece 7, 8, 9 */
+        .image-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin: 30px 0; 
+        }
+        .image-gallery img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            transition: 0.3s;
+            border: 1px solid #ddd;
+        }
+        .image-gallery img:hover { transform: scale(1.03); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Büyütme Ekranı (Lightbox) */
+        #lightbox {
+            display: none; 
+            position: fixed; 
+            z-index: 9999; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.9); 
+            justify-content: center; 
+            align-items: center;
+        }
+        #lightbox img { 
+            max-width: 90%; 
+            max-height: 85%; 
+            border: 3px solid white; 
+            border-radius: 5px;
+        }
+        #lightbox:target { display: flex; } /* Resme tıklanınca burası çalışır */
+
+        /* Özellik Kutuları */
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .feature-item { background: #fdfdfd; padding: 20px; border-left: 5px solid var(--accent); border-radius: 5px; border: 1px solid #eee; }
+        .feature-item strong { display: block; color: var(--primary); font-size: 1.1rem; margin-bottom: 5px; }
+
+        @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav><a href="index.html">← Back to Home</a></nav>
+
+    <div class="container">
+        <h1>Drywall & Steel Framing</h1>
+        <p>Precision-led structural framing and elite Level 5 drywall finishing for residential and commercial projects.</p>
+        
+        <div class="image-gallery">
+            <img src="7.jpg" alt="Mudding" onclick="openFull(this.src)">
+            <img src="8.jpg" alt="Framing" onclick="openFull(this.src)">
+            <img src="9.jpg" alt="Installation" onclick="openFull(this.src)">
+        </div>
+
+        <div class="features">
+            <div class="feature-item"><strong>Steel Stud Framing</strong> High-precision structural skeletons for any build.</div>
+            <div class="feature-item"><strong>Boarding & Installation</strong> Professional drywall hanging for seamless walls.</div>
+            <div class="feature-item"><strong>Mudding & Taping</strong> Level 5 finishing for a glass-smooth surface.</div>
+            <div class="feature-item"><strong>Acoustic Control</strong> Specialized soundproofing for maximum privacy.</div>
+        </div>
+    </div>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="full-img" src="">
+        <p style="position: absolute; bottom: 20px; color: white;">Click anywhere to close</p>
+    </div>
+
+    <script>
+        function openFull(src) {
+            document.getElementById('full-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
