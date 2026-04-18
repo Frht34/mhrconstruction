@@ -8,80 +8,50 @@
         :root { --primary: #1a252f; --accent: #d35400; --bg: #f8f9fa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
         
-        /* Navigasyon */
         nav { background: var(--primary); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         nav a:hover { color: var(--accent); }
 
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         
-        /* Başlık ve Profesyonel Giriş Yazısı */
         .project-header { text-align: center; margin-bottom: 50px; }
-        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .intro-text { 
-            max-width: 850px; 
-            margin: 0 auto; 
-            color: #555; 
-            font-size: 1.1rem; 
-            line-height: 1.8; 
-            font-style: italic;
-            position: relative;
-            padding: 0 20px;
-        }
-        .intro-text::before, .intro-text::after {
-            content: '"';
-            font-size: 3rem;
-            color: var(--accent);
-            position: absolute;
-            opacity: 0.3;
-        }
-        .intro-text::before { left: -10px; top: -20px; }
-        .intro-text::after { right: -10px; bottom: -40px; }
+        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .section-subtitle { text-align: center; color: var(--accent); font-size: 1.8rem; margin: 60px 0 30px; text-transform: uppercase; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
 
-        /* Video Izgarası */
         .project-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 25px; 
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
         }
 
-        .video-card { 
+        .card { 
             background: white; 
-            border-radius: 12px; 
+            border-radius: 8px; 
             overflow: hidden; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border: 1px solid #eee;
             transition: transform 0.3s ease;
         }
-        .video-card:hover { transform: translateY(-5px); }
+        .card:hover { transform: translateY(-5px); }
 
-        /* Video Standartlaştırma */
-        video { 
+        video, .project-img { 
             width: 100%; 
-            height: 320px; 
-            object-fit: cover; /* Yatay videolar için ideal */
-            background: #000;
+            height: 300px; 
+            object-fit: cover; 
             display: block;
+            background: #000;
         }
 
-        /* Dikey Çekilen Videoların Bozulmaması İçin (15 ve 22) */
-        .vertical-video { 
-            object-fit: contain; 
-        }
-
-        .video-info { 
-            padding: 15px; 
+        .info { 
+            padding: 12px; 
             text-align: center; 
             border-top: 3px solid var(--accent); 
-            background: #fff;
         }
-        .video-info h3 { margin: 0; font-size: 1rem; color: var(--primary); text-transform: uppercase; }
+        .info h3 { margin: 0; font-size: 0.85rem; color: var(--primary); text-transform: uppercase; }
 
         @media (max-width: 600px) {
+            video, .project-img { height: 250px; }
             h1 { font-size: 1.8rem; }
-            .intro-text { font-size: 1rem; }
-            video { height: 280px; }
         }
     </style>
 </head>
@@ -92,58 +62,47 @@
     <div class="container">
         <div class="project-header">
             <h1>Project Portfolio</h1>
-            <p class="intro-text">
-                Every project we undertake is a testament to our commitment to precision, durability, and aesthetic excellence. From high-end residential renovations to large-scale commercial build-outs, we transform structural blueprints into masterful interior realities.
-            </p>
+            <p style="text-align:center; font-style:italic; color:#666;">Expertise in Residential & Commercial Construction</p>
         </div>
 
+        <h2 class="section-subtitle">Video Showcases</h2>
         <div class="project-grid">
+            <div class="card"><video controls muted loop playsinline><source src="19.mp4" type="video/mp4"></video><div class="info"><h3>Grand Ballroom</h3></div></div>
+            <div class="card"><video controls muted loop playsinline><source src="17.mp4" type="video/mp4"></video><div class="info"><h3>Executive Lounge</h3></div></div>
+            <div class="card"><video controls muted loop playsinline><source src="21.mp4" type="video/mp4"></video><div class="info"><h3>Modern Foyer Design</h3></div></div>
+            <div class="card"><video controls muted loop playsinline><source src="13.mp4" type="video/mp4"></video><div class="info"><h3>Artisan Wallpaper</h3></div></div>
+            <div class="card"><video controls muted loop playsinline><source src="18.mp4" type="video/mp4"></video><div class="info"><h3>Architectural Paneling</h3></div></div>
+            <div class="card"><video controls muted loop playsinline><source src="14.mp4" type="video/mp4"></video><div class="info"><h3>Reception & Lobby</h3></div></div>
+        </div>
 
-            <div class="video-card">
-                <video controls muted loop playsinline><source src="19.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Grand Ballroom</h3></div>
-            </div>
+        <h2 class="section-subtitle">Project Gallery</h2>
+        <div class="project-grid">
+            
+            <div class="card"><img src="43.jpeg" class="project-img"><div class="info"><h3>T-Bar Grid Foundation</h3></div></div>
+            <div class="card"><img src="44.jpeg" class="project-img"><div class="info"><h3>Large Venue Ceiling Prep</h3></div></div>
+            <div class="card"><img src="45.jpeg" class="project-img"><div class="info"><h3>Precision Ceiling Alignment</h3></div></div>
+            <div class="card"><img src="46.jpeg" class="project-img"><div class="info"><h3>Industrial T-Bar Install</h3></div></div>
+            <div class="card"><img src="47.jpeg" class="project-img"><div class="info"><h3>Wall Surface Preparation</h3></div></div>
+            <div class="card"><img src="48.jpeg" class="project-img"><div class="info"><h3>Commercial Framing & Drywall</h3></div></div>
+            <div class="card"><img src="49.jpeg" class="project-img"><div class="info"><h3>Professional Painting Phase</h3></div></div>
+            <div class="card"><img src="50.jpeg" class="project-img"><div class="info"><h3>Final Structural Touch</h3></div></div>
 
-            <div class="video-card">
-                <video controls muted loop playsinline><source src="17.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Executive Lounge</h3></div>
-            </div>
+            <div class="card"><img src="33.jpeg" class="project-img"><div class="info"><h3>Completed T-Bar System</h3></div></div>
+            <div class="card"><img src="34.jpeg" class="project-img"><div class="info"><h3>Ceiling Finishing</h3></div></div>
+            <div class="card"><img src="35.jpeg" class="project-img"><div class="info"><h3>Utility Integration</h3></div></div>
+            <div class="card"><img src="36.jpg" class="project-img"><div class="info"><h3>Commercial Interior Design</h3></div></div>
+            <div class="card"><img src="37.jpeg" class="project-img"><div class="info"><h3>Luxury Wall Texture</h3></div></div>
+            <div class="card"><img src="38.jpeg" class="project-img"><div class="info"><h3>Hallway Transformation</h3></div></div>
+            <div class="card"><img src="39.jpeg" class="project-img"><div class="info"><h3>Detailed Wall Finishing</h3></div></div>
+            <div class="card"><img src="40.jpeg" class="project-img"><div class="info"><h3>Modern Accent Walls</h3></div></div>
+            <div class="card"><img src="41.jpeg" class="project-img"><div class="info"><h3>Open Concept Reno</h3></div></div>
+            <div class="card"><img src="42.jpeg" class="project-img"><div class="info"><h3>Project Management</h3></div></div>
 
-            <div class="video-card">
-                <video controls muted loop playsinline><source src="21.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Modern Foyer Design</h3></div>
-            </div>
-
-            <div class="video-card">
-                <video controls muted loop playsinline><source src="13.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Artisan Wallpaper</h3></div>
-            </div>
-
-            <div class="video-card">
-                <video controls muted loop playsinline><source src="18.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Architectural Paneling</h3></div>
-            </div>
-
-            <div class="video-card">
-                <video controls muted loop playsinline><source src="14.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Reception & Lobby</h3></div>
-            </div>
-
-            <div class="video-card">
-                <video controls muted loop playsinline class="vertical-video"><source src="15.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>High-End Finishing</h3></div>
-            </div>
-
-            <div class="video-card">
-                <video controls muted loop playsinline class="vertical-video"><source src="22.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Master Bath Renovation</h3></div>
-            </div>
-
-            <div class="video-card">
-                <video controls muted loop playsinline><source src="16.mp4" type="video/mp4"></video>
-                <div class="video-info"><h3>Commercial Social Space</h3></div>
-            </div>
-
+            <div class="card"><img src="23.jpeg" class="project-img"><div class="info"><h3>Bank Interior Fit-out</h3></div></div>
+            <div class="card"><img src="24.jpeg" class="project-img"><div class="info"><h3>Counter & Desk Finishing</h3></div></div>
+            <div class="card"><img src="25.jpeg" class="project-img"><div class="info"><h3>Wood Slat Aesthetics</h3></div></div>
+            <div class="card"><img src="28.jpeg" class="project-img"><div class="info"><h3>Creative Wallpaper Install</h3></div></div>
+            <div class="card"><img src="30.jpeg" class="project-img"><div class="info"><h3>Residential Bathroom Reno</h3></div></div>
         </div>
     </div>
 
